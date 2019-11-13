@@ -1,8 +1,10 @@
 import express from 'express';
 import routes from './src/routes/crmRoutes';
+require('dotenv').config();
 
 const app = express();
 const PORT = 4000;
+const DB_PASS = process.env.DB_PASS;
 
 routes(app);
 
