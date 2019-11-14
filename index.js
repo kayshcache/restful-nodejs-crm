@@ -1,3 +1,4 @@
+
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
@@ -7,7 +8,7 @@ import routes from './src/routes/crmRoutes';
 dotenv.config();
 
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 const DB_PASS = process.env.DB_PASS;
 
 // Mongoose connection
