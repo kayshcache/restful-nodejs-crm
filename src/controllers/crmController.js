@@ -14,3 +14,22 @@ export const addNewContact = (req, res) => {
 	});
 };
 
+export const getContacts = (req, res) => {
+	// Can pass search params as an object
+	// Second arg is callback function declaration
+	Contact.find({}, (err, contact) => {
+		if (err) {
+			res.send(err);
+		}
+		res.json(contact);
+	});
+};
+
+export const getContactWithId = (req, res) => {
+	Contact.findById(req.params.contactId, (err, contact) => {
+		if (err) {
+			res.send(err);
+		}
+		res.json(contact);
+	})
+}

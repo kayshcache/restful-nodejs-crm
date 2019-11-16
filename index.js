@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
@@ -9,11 +8,11 @@ dotenv.config();
 
 const app = express();
 const PORT = 3000;
-const DB_PASS = process.env.DB_PASS;
+const DB_CREDENTIALS = process.env.DB_CREDENTIALS;
 
 // Mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb+srv://goo:${DB_PASS}@coder-g8zwo.gcp.mongodb.net/test?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://${DB_CREDENTIALS}@coder-g8zwo.gcp.mongodb.net/test?retryWrites=true&w=majority`, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
 });
